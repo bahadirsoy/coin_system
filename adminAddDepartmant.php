@@ -18,11 +18,9 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-2">
-                <?php
-                    require "SharedHTML/adminSidebar.php";
-                ?>
-            </div>
+            <?php
+                require "SharedHTML/adminSidebar.php";
+            ?>
 
             <div class="col-10 mt-3">
                 <form action="Control/adminAddDepartmantControl.php" method="POST">
