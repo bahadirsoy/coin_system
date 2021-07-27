@@ -39,6 +39,7 @@
                         <tr>
                             <th scope="col">Departman Adı</th>
                             <th scope="col">Kullanıcı Adı</th>
+                            <th></th>
                         </tr>
                     </thead>
 
@@ -51,10 +52,16 @@
                 $departmantName = $row['departmantName'];
                 $username = $row['username'];
 
+                $id = $row['id'];
+
                 echo "
                         <tr>
                             <td>$departmantName</td>
                             <td>$username</td>
+                            <td>
+                                <a href='./adminUpdateDepartmant.php?id=".$id."&departmantName=".$departmantName."&username=".$username."' class='btn btn-warning btn-sm'>Update</a>
+                                <a href='Actions/adminDeleteDepartmant.php' class='btn btn-danger btn-sm'>Delete</a>
+                            </td>
                         </tr>
                 ";
             }
