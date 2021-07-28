@@ -55,10 +55,6 @@
                             class="btn btn-info btn-sm mt-1">Güncelle</button>
                     </form>
                 </div>
-
-                <form action="Control/adminAddDepartmantControl.php" method="POST">
-                    <button type="submit" class="btn btn-primary btn-lg mt-3">Tümünü güncelle</button>
-                </form>
             </div>
         </div>
     </div>

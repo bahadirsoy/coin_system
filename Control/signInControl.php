@@ -22,6 +22,7 @@ if (!isset($username) || !isset($password) || $username==="" || $password==="") 
             session_start();
 
             $_SESSION['id']=$row['id'];
+            $_SESSION['departmantName']=$row['departmantName'];
             $_SESSION['username']=$row['username'];
             $_SESSION['password']=$row['password'];
             $_SESSION['isAdmin']=$row['isAdmin'];

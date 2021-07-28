@@ -46,6 +46,12 @@ switch($field){
     
         break;
 
+    case "all":
+
+        
+
+        break;
+
     default:
         echo "adminUpdateDepartmantAction.php de switch defaulta girdi. Sıkıntı var";
         break;
