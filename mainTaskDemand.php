@@ -31,7 +31,12 @@
                             <select class="form-control" name="consumerId" id="consumerId">
                                 <option selected disabled>Departmant Seçiniz</option>
                                 <?php
-                                    $sql = "SELECT * FROM departman WHERE isAdmin = '0' ORDER BY departmantName";
+
+                                    $sessionId = $_SESSION['id'];
+
+                                    $sql = "SELECT * FROM departman 
+                                    WHERE isAdmin = '0' AND id != '$sessionId'
+                                    ORDER BY departmantName";
                                     $result = $conn->query($sql);
                                     
                                     if ($result->num_rows > 0) {

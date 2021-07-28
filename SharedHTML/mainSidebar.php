@@ -5,9 +5,12 @@
 <nav>
     <ul class="d-flex justify-content-between">
         <div class="d-flex justify-content-start">
-            <li><a class="active fw-bold" href="#home"> Hoşgeldin <?php echo $_SESSION['departmantName']; ?> </a></li>
+            <?php
+                $sessionId = $_SESSION['id'];
+            ?>
+            <li><a class="active fw-bold" href="./mainPage.php"> Hoşgeldin <?php echo $_SESSION['departmantName']; ?> </a></li>
             <li><a href="#news">Geçmiş</a></li>
-            <li><a href="#contact">Profil</a></li>
+            <li><a href="./mainProfile.php?id=<?php echo $sessionId; ?>">Profil</a></li>
         </div>
 
         <div class="d-flex justify-content-start">
