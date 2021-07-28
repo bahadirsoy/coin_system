@@ -1,6 +1,7 @@
 <?php
 
 require "../SharedPHP/databaseConnection.php";
+session_start();
 
 $id = $_GET['id'];
 $field = $_GET['field'];
@@ -12,6 +13,7 @@ switch($field){
         $sql = "UPDATE departman SET departmantName='$departmantName' WHERE id='$id'";
 
         if (mysqli_query($conn, $sql)) {
+            $_SESSION['departmantName'] = $departmantName;
             header("Location: ../mainProfile.php?result=success");
         } else {
             echo "Error updating record: " . mysqli_error($conn);
@@ -25,6 +27,7 @@ switch($field){
         $sql = "UPDATE departman SET username='$username' WHERE id='$id'";
         
         if (mysqli_query($conn, $sql)) {
+            $_SESSION['username'] = $username;
             header("Location: ../mainProfile.php?result=success");
         } else {
             echo "Error updating record: " . mysqli_error($conn);

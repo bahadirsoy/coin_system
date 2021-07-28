@@ -17,7 +17,7 @@
     <?php
         require "SharedHTML/mainSidebar.php";
         $sessionId = $_SESSION['id'];
-
+        
         $sql = "SELECT * FROM departman WHERE id = '$sessionId'";
         $result = $conn->query($sql);
 
