@@ -76,6 +76,10 @@
                     <div>
                         ".$coin."
                     </div>
+
+                    <div>
+                        <a href='Actions/cancelTaskAction.php?taskId=".$taskId."' class='btn btn-warning'>İptal et</a>
+                    </div>
                     
                 </div>
                 <div class='card-footer text-muted'>
@@ -101,6 +105,10 @@
 
                 <div>
                     ".$coin."
+                </div>
+
+                <div>
+                    <a href='Actions/cancelTaskAction.php?taskId=".$taskId."' class='btn btn-warning'>İptal et</a>
                 </div>
                 
             </div>

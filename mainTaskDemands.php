@@ -79,7 +79,7 @@
                     
                     <div>
                         <a href='Actions/acceptTaskAction.php?taskId=".$taskId."' class='btn btn-primary'>Kabul et</a>
-                        <a href='#' class='btn btn-danger'>Reddet</a>
+                        <a href='Actions/rejectTaskAction.php?taskId=".$taskId."' class='btn btn-danger'>Reddet</a>
                     </div>
                 </div>
                 <div class='card-footer text-muted'>
@@ -108,7 +108,7 @@
                 </div>
                 
                 <div>
-                    
+                    <a href='Actions/cancelTaskAction.php?taskId=".$taskId."' class='btn btn-warning'>İptal et</a>
                 </div>
             </div>
             <div class='card-footer text-muted'>
