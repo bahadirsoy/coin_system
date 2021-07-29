@@ -21,7 +21,7 @@ if (!isset($title) || !isset($description) || !isset($coin) || $title==="" || $d
     $demandingId = $_SESSION['id'];
 
     $sql = "INSERT INTO task
-    VALUES (NULL, '$demandingId', '$consumerId', '$title', '$description', '$coin', '0')";
+    VALUES (NULL, '$demandingId', '$consumerId', '$title', '$description', '$coin', '0', SYSDATE())";
 
     if ($conn->query($sql) === TRUE) {
         header("Location: ../mainTaskDemand.php?result=success");
