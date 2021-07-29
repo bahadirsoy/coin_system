@@ -24,9 +24,10 @@
 
     $sessionId = $_SESSION['id'];
 
-    $sql = "SELECT * 
+    $sql = "SELECT *, task.id AS taskId 
     FROM departman, task 
-    WHERE departman.id = '$sessionId' AND (task.demandingId = '$sessionId' OR task.consumerId = '$sessionId')";
+    WHERE departman.id = '$sessionId' AND (task.demandingId = '$sessionId' OR task.consumerId = '$sessionId')
+    AND isInProcess = '0'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
@@ -55,6 +56,7 @@
             $result2 = $conn->query($sql2);
             $row2 = $result2->fetch_assoc();
             $consumerName = $row2['departmantName'];
+            $taskId = $row['taskId'];
 
             echo "
             <div class='card mt-4'>
@@ -75,7 +77,7 @@
                     </div>
                     
                     <div>
-                        <a href='#' class='btn btn-primary'>Kabul et</a>
+                        <a href='Actions/acceptTaskAction.php?taskId=".$taskId."' class='btn btn-primary'>Kabul et</a>
                         <a href='#' class='btn btn-warning'>Geri teklif</a>
                         <a href='#' class='btn btn-danger'>Reddet</a>
                     </div>
