@@ -24,7 +24,7 @@
 
     $sessionId = $_SESSION['id'];
 
-    $sql = "SELECT *, task.id AS taskId 
+    $sql = "SELECT *, task.id AS taskId, datediff(curdate(), date) AS dateDiff
     FROM departman, task 
     WHERE departman.id = '$sessionId' AND (task.demandingId = '$sessionId' OR task.consumerId = '$sessionId')
     AND isInProcess = '0'";
@@ -38,6 +38,7 @@
         $title = $row['title'];
         $description = $row['description'];
         $coin = $row['coin'];
+        $dateDiff = $row['dateDiff'];
 
         $sql2 = "SELECT departmantName
         FROM departman
@@ -57,7 +58,7 @@
             $row2 = $result2->fetch_assoc();
             $consumerName = $row2['departmantName'];
             $taskId = $row['taskId'];
-
+        
             echo "
             <div class='card mt-4'>
                 <div class='card-body d-flex justify-content-between'>
@@ -82,7 +83,7 @@
                     </div>
                 </div>
                 <div class='card-footer text-muted'>
-                    2 days ago
+                    ".$dateDiff." gün önce"."
                 </div>
             </div>
             ";
@@ -111,7 +112,7 @@
                 </div>
             </div>
             <div class='card-footer text-muted'>
-                2 days ago
+                ".$dateDiff." gün önce"."
             </div>
         </div>
         ";
