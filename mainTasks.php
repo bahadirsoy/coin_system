@@ -27,7 +27,7 @@
     $sql = "SELECT *, task.id AS taskId 
     FROM departman, task 
     WHERE departman.id = '$sessionId' AND (task.demandingId = '$sessionId' OR task.consumerId = '$sessionId')
-    AND isInProcess = '0'";
+    AND isInProcess = '1'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
@@ -76,10 +76,6 @@
                         ".$coin."
                     </div>
                     
-                    <div>
-                        <a href='Actions/acceptTaskAction.php?taskId=".$taskId."' class='btn btn-primary'>Kabul et</a>
-                        <a href='#' class='btn btn-danger'>Reddet</a>
-                    </div>
                 </div>
                 <div class='card-footer text-muted'>
                     2 days ago
@@ -106,9 +102,6 @@
                     ".$coin."
                 </div>
                 
-                <div>
-                    
-                </div>
             </div>
             <div class='card-footer text-muted'>
                 2 days ago

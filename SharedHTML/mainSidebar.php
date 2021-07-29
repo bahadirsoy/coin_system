@@ -9,7 +9,7 @@
                 $sessionId = $_SESSION['id'];
             ?>
             <li><a class="active fw-bold" href="./mainPage.php"> Hoşgeldin <?php echo $_SESSION['departmantName']; ?> </a></li>
-            <li><a href="#news">İşler</a></li>
+            <li><a href="./mainTasks.php">İşler</a></li>
             <li><a href="./mainProfile.php?id=<?php echo $sessionId; ?>">Profil</a></li>
         </div>
 
