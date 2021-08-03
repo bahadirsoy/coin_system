@@ -18,6 +18,28 @@
     <?php
         require "SharedHTML/mainSidebar.php";
         
+        if(isset($_GET['result']))
+        {
+            if($_GET['result'] == "deleted")
+            {
+                echo "
+                <div class='container'>
+                    <div class='alert alert-info mt-2' role='alert'>
+                        İstek iptal edildi.
+                    </div>
+                </div>
+                ";
+            } else if($_GET['result'] == "success")
+            {
+                echo "
+                <div class='container'>
+                    <div class='alert alert-success mt-2' role='alert'>
+                        İstek kabul edildi.
+                    </div>
+                </div>
+                ";
+            }
+        }
     ?>
 
     <?php
@@ -39,6 +61,7 @@
         $description = $row['description'];
         $coin = $row['coin'];
         $dateDiff = $row['dateDiff'];
+        $taskId = $row['taskId'];
 
         $sql2 = "SELECT departmantName
         FROM departman
@@ -120,7 +143,13 @@
         }
     }
     } else {
-        echo "0 results";
+        echo "
+        <div class='container'>
+            <div class='alert alert-warning mt-5' role='alert' style='font-size: 30px;'>
+                İş isteği yok
+            </div>
+        </div>
+        ";
     }
 
     ?>

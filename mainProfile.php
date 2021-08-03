@@ -33,6 +33,26 @@
     ?>
 
     <div class="container">
+        <?php
+            if(isset($_GET['result']))
+            {
+                if($_GET['result'] == "tooShort")
+                {
+                    echo "
+                    <div class='alert alert-danger fw-bold' role='alert'>
+                        Departman adı ve kullanıcı adı 5 karakterden kısa olamaz
+                    </div>
+                    ";
+                } else if($_GET['result'] == "tooLong")
+                {
+                    echo "
+                    <div class='alert alert-danger fw-bold' role='alert'>
+                        Departman adı ve kullanıcı adı 25 karakterden uzun olamaz
+                    </div>
+                    ";
+                }
+            }
+        ?>
         <div class="row">
             <div class="col-10 mt-3">
                 <div class="mb-3">

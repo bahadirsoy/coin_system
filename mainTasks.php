@@ -39,6 +39,7 @@
         $description = $row['description'];
         $coin = $row['coin'];
         $dateDiff = $row['dateDiff'];
+        $taskId = $row['taskId'];
 
         $sql2 = "SELECT departmantName
         FROM departman
@@ -121,7 +122,13 @@
         }
     }
     } else {
-        echo "0 results";
+        echo "
+        <div class='container'>
+            <div class='alert alert-warning mt-5' role='alert' style='font-size: 30px;'>
+                Kabul edilmiş iş yok
+            </div>
+        </div>
+        ";
     }
 
     ?>

@@ -12,6 +12,8 @@ switch($field){
         $departmantName = $_POST['departmantName'];
         $sql = "UPDATE departman SET departmantName='$departmantName' WHERE id='$id'";
 
+        control($departmantName);
+
         if (mysqli_query($conn, $sql)) {
             $_SESSION['departmantName'] = $departmantName;
             header("Location: ../mainProfile.php?result=success");
@@ -25,6 +27,8 @@ switch($field){
         
         $username = $_POST['userName'];
         $sql = "UPDATE departman SET username='$username' WHERE id='$id'";
+
+        control($username);
         
         if (mysqli_query($conn, $sql)) {
             $_SESSION['username'] = $username;
@@ -58,4 +62,17 @@ switch($field){
     default:
         echo "adminUpdateDepartmantAction.php de switch defaulta girdi. Sıkıntı var";
         break;
+}
+
+function control($variable)
+{
+    if(strlen(trim($variable)) < 5)
+    {
+        header("Location: ../mainProfile.php?result=tooShort");
+        exit();
+    } else if(strlen(trim($variable)) > 25)
+    {
+        header("Location: ../mainProfile.php?result=tooLong");
+        exit();
+    }
 }

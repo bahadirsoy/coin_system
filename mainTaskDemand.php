@@ -22,12 +22,25 @@
     ?>
 
     <main>
-        <div class="container">
+        <div class="container mt-2">
             <div class="row">
+                <?php
+                    if(isset($_GET['result']))
+                    {
+                        if($_GET['result'] == "success")
+                        {
+                            echo "
+                            <div class='alert alert-success fw-bold' role='alert'>
+                                İş isteği başarılı
+                            </div>
+                        ";
+                        }
+                    }
+                ?>
                 <div class="col-12 mt-4">
                     <form action="Control/mainTaskDemandControl.php" method="POST">
                         <div class="mb-3">
-                            <label for="consumerId" class="form-label">Consumer</label>
+                            <label for="consumerId" class="form-label">Kime</label>
                             <select class="form-control" name="consumerId" id="consumerId">
                                 <option selected disabled>Departmant Seçiniz</option>
                                 <?php
@@ -57,18 +70,18 @@
                             </select>
                         </div>
                         <div class="mb-3">
-                            <label for="title" class="form-label">Title</label>
+                            <label for="title" class="form-label">Başlık</label>
                             <input type="text" class="form-control" name="title" id="title">
                         </div>
                         <div class="mb-3">
-                            <label for="description" class="form-label">Description</label>
+                            <label for="description" class="form-label">Açıklama</label>
                             <input type="text" class="form-control" name="description" id="description">
                         </div>
                         <div class="mb-3">
                             <label for="coin" class="form-label">Coin</label>
                             <input type="number" class="form-control" name="coin" id="coin">
                         </div>
-                        <button type="submit" class="btn btn-primary">Demand task</button>
+                        <button type="submit" class="btn btn-primary">İş iste</button>
                     </form>
                 </div>
             </div>
