@@ -39,6 +39,6 @@ if (!isset($username) || !isset($password) || $username==="" || $password==="") 
             header("Location: ../signInPage.php?result=wrongPassword&username=".$username);
         }
     } else {
-        echo "0 results";
+        header("Location: ../signInPage.php?result=wrongPassword&username=".$username);
     }
 }

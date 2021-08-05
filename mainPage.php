@@ -42,7 +42,7 @@
                                 $departmantName = $row['departmantName'];
 
                                 echo "
-                                    <div class='col-4 mt-4'>
+                                    <div class='col-lg-4 col-md-6 col-sm-12 mt-4'>
                                         <div class='card'>
                                             <div class='card-body'>
                                                 <h5 class='card-title'>".$departmantName."</h5>

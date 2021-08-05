@@ -60,6 +60,7 @@
                             <td>$username</td>
                             <td>
                                 <a href='./adminUpdateDepartmant.php?id=".$id."&departmantName=".$departmantName."&username=".$username."' class='btn btn-warning btn-sm'>Update</a>
+                                <a href='./adminDepartmantTasks.php?id=".$id."' class='btn btn-info btn-sm'>Tasks</a>
                                 <a href='Actions/adminDeleteDepartmant.php' class='btn btn-danger btn-sm'>Delete</a>
                             </td>
                         </tr>
